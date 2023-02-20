@@ -13,7 +13,7 @@ const widthModificator = 30;
 // Модификатор скорости - чем он выше тем быстрее крутится колесо
 const speedModificator = 10;
 // Количество секунд, на протяжении которых будет крутиться колесо
-const rollLength = 1;
+const rollLength = 30;
 // Количество колес
 const howManyWheels = 3;
 // Расстояние между колесами в пикселях
