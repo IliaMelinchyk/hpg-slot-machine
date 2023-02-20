@@ -107,7 +107,6 @@
   animation-name: spin;
 }
 
-
 .wheel__segment {
   display: flex;
   justify-content: center;
@@ -117,6 +116,10 @@
   position: absolute;
   top: 50%;
   background-color: #ccc;
+}
+
+.wheel__segment-winner {
+  background-color: #61dafb;
 }
 
 .wheel__bg {
