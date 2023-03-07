@@ -33,7 +33,7 @@ const Wheel = ({ shuffledWheel, radius, angle, wheelStyle, wheelItemStyle, final
 	}, [finalIndexes, winningIndex]);
 
     return <div className="wheel__container">
-        <div style={{...wheelStyle}} className="wheel__inner" onAnimationEnd={onRollEnd}>
+        <div style={wheelStyle} className="wheel__inner" onAnimationEnd={onRollEnd}>
             {itemsMarkup}
         </div>
     </div>

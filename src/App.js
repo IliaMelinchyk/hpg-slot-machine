@@ -79,11 +79,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <div className="container">
-        <div className="wheel">
-          {wheelsMarkup}
-        </div>
+    <div className="container">
+      <div className="wheel">
+        {wheelsMarkup}
       </div>
     </div>
   );
