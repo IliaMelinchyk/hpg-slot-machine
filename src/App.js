@@ -12,7 +12,7 @@ const itemWidth = 300;
 // Модификатор скорости - чем он выше тем быстрее крутится колесо
 const speedModificator = 10;
 // Количество секунд, на протяжении которых будет крутиться колесо (без учета 6 секунд, на протяжении которых в конце хайлайтятся случайные ячейки)
-const rollLength = 1;
+const rollLength = 24;
 // Количество ячеек которые видно единовременно (обязательно должно быть нечетное число)
 const howManyItemsVisible = 9;
 
@@ -79,10 +79,8 @@ function App() {
   }, [])
 
   return (
-    <div className="container">
-      <div className="wheel">
-        {wheelsMarkup}
-      </div>
+    <div className="wheel">
+      {wheelsMarkup}
     </div>
   );
 }
