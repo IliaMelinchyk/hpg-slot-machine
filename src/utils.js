@@ -17,3 +17,27 @@ export const shuffleArrayWithoutDuplicates = (arr) => {
 
     return shuffledArr;
 }
+
+export const randomWinner = (time, ticks, setCurHighlightValue, shuffledHighlightOrder) => {
+    if (time < 1000)
+        return;
+    const delay = time / ticks; // вычисляем задержку между каждым хайлайтом
+    let i = 0;
+    const intervalId = setInterval(() => {
+        setCurHighlightValue(shuffledHighlightOrder[0]);
+        shuffledHighlightOrder.shift();
+        i++;
+        if (i === ticks) {
+            clearInterval(intervalId);
+            randomWinner(time - 1000, Math.ceil(ticks / 2), setCurHighlightValue, shuffledHighlightOrder);
+        }
+    }, delay);
+}
+
+export const enlargeArray = (array, num) => {
+    const newArray = [...array];
+    while (newArray.length < num) {
+        newArray.push(...array);
+    }
+    return newArray.slice(0, num);
+}

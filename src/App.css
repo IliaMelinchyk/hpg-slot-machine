@@ -1,69 +1,11 @@
-.App {
-  text-align: center;
-  padding-top: 400px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.container {
-}
-.window {
-  border: 2px solid red;
-}
-.items {
-  position: relative;
-  transition: bottom 30s ease-out;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
 .wheel {
-  /* perspective: 1000px; */
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  position: relative;
-  background-color: #FFF;
 }
 
 .wheel__container {
-  opacity: 0;
+  animation-name: wheel-appear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes wheel-appear {
@@ -75,20 +17,12 @@
   }
 }
 
-.wheel__container-appear {
-  opacity: 1;
-  animation-name: wheel-appear;
-  animation-duration: 1s;
-  animation-fill-mode: backwards;
-}
-
 .wheel__inner {
   position: relative;
-  width: 60px;
-  height: 350px;
   transform-style: preserve-3d;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+  animation-name: spin;
 }
 
 @keyframes spin {
@@ -103,31 +37,16 @@
   }
 }
 
-.wheel__inner-spin {
-  animation-name: spin;
-}
-
 .wheel__segment {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 40px;
   position: absolute;
   top: 50%;
   background-color: #ccc;
+  transition: background-color 0.3s linear;
 }
 
 .wheel__segment-winner {
   background-color: #61dafb;
-}
-
-.wheel__bg {
-  width: 627px;
-  height: 637px;
-  object-fit: contain;
-  position: absolute;
-  top: 260px;
-  left: 50%;
-  transform: translateX(-41%);
 }
